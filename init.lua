@@ -65,12 +65,13 @@ vim.api.nvim_create_user_command('Config', 'edit ~/.config/nvim/init.lua', {})
 -- Clear search highlights when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>')
 
--- ===== Plugins =====  See `:h vim.pack`
+-- Plugins
 vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.nvim' }, -- icons, pairs, files, pick, extra, diff
     { src = 'https://github.com/romus204/tree-sitter-manager.nvim' }, -- parsers
     { src = 'https://github.com/NMAC427/guess-indent.nvim' }, -- auto-detect indentation
     { src = 'https://github.com/loctvl842/monokai-pro.nvim' }, -- colorscheme
+    { src = 'https://github.com/stevearc/conform.nvim' } -- code formatting
 })
 
 -- Icons (used by mini.files and mini.pick)
@@ -143,6 +144,7 @@ require('guess-indent').setup({
     },
 })
 
+-- Colorscheme Stuff
 require('tree-sitter-manager').setup({
     ensure_installed = {
         'bash', 'c', 'cpp', 'diff', 'html', 'lua', 'luadoc',
@@ -207,3 +209,17 @@ require('monokai-pro').setup({
     end
 })
 vim.cmd.colorscheme('monokai-pro-spectrum')
+
+-- Code Formatting
+require('conform').setup({
+    notify_on_error = false,
+    formatters_by_ft = {
+        cpp = { 'clang-format' },
+    },
+    default_format_opts = {
+        lsp_format = 'never',
+    },
+})
+vim.keymap.set({ 'n', 'v' }, '<leader>f', function()
+    require('conform').format({ async = true })
+end, { desc = 'Format buffer' })
