@@ -1,0 +1,20 @@
+{
+  "plugins": {
+    "guess-indent.nvim": {
+      "rev": "84a4987ff36798c2fc1169cbaff67960aed9776f",
+      "src": "https://github.com/NMAC427/guess-indent.nvim"
+    },
+    "mini.nvim": {
+      "rev": "bf8169f3e518be8de3f88073ace37d91f576cb04",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "monokai-pro.nvim": {
+      "rev": "a68e38b8e55d69a215d0f02598900a79c356da9d",
+      "src": "https://github.com/loctvl842/monokai-pro.nvim"
+    },
+    "tree-sitter-manager.nvim": {
+      "rev": "966c28dbc68fc99c82c51a64b6ec37f420aab880",
+      "src": "https://github.com/romus204/tree-sitter-manager.nvim"
+    }
+  }
+}
