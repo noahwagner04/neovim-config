@@ -168,10 +168,10 @@ require('monokai-pro').setup({
         set({
             '@function.call', '@function.method.call', '@method.call',
             '@function.builtin.lua', '@function.builtin',
-            '@constructor',
+            '@constructor.lua',
             '@variable', '@variable.member', '@variable.parameter',
             '@property', '@field',
-            '@operator', '@punctuation', '@punctuation.delimiter',
+            '@operator', '@punctuation', '@punctuation.delimiter', '@punctuation.delimiter.cpp',
             '@punctuation.bracket', '@punctuation.special',
             'MiniFilesFile'
         }, { fg = p.white })
