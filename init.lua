@@ -216,6 +216,11 @@ require('conform').setup({
     formatters_by_ft = {
         cpp = { 'clang-format' },
     },
+    formatters = {
+        ['clang-format'] = {
+            prepend_args = { '--style=file', '--fallback-style=none' },
+        },
+    },
     default_format_opts = {
         lsp_format = 'never',
     },
