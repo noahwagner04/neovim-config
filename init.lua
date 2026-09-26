@@ -22,7 +22,7 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.colorcolumn = '100'
 vim.o.swapfile = false
-vim.opt.clipboard = 'unnamedplus'
+vim.o.clipboard = 'unnamedplus'
 
 -- 4-space indentation (tab width left at its default of 8)
 vim.o.tabstop = 8
