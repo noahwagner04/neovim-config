@@ -145,6 +145,7 @@ require('guess-indent').setup({
 })
 
 -- Colorscheme Stuff
+vim.env.TREE_SITTER_JS_RUNTIME = "native"
 require('tree-sitter-manager').setup({
     ensure_installed = {
         'bash', 'c', 'cpp', 'diff', 'html', 'lua', 'luadoc',
