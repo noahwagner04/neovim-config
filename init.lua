@@ -229,3 +229,8 @@ require('conform').setup({
 vim.keymap.set({ 'n', 'v' }, '<leader>f', function()
     require('conform').format({ async = true })
 end, { desc = 'Format buffer' })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "teal",
+  callback = function() vim.bo.commentstring = "-- %s" end,
+})
