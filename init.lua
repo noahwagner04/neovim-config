@@ -156,6 +156,16 @@ require('tree-sitter-manager').setup({
 
 require('monokai-pro').setup({
     filter = 'spectrum',
+    styles = {
+        comment = { italic = false },
+        keyword = { italic = false },
+        type = { italic = false },
+        storageclass = { italic = false },
+        structure = { italic = false },
+        parameter = { italic = false },
+        annotation = { italic = false },
+        tag_attribute = { italic = false },
+    },
     override_palette = function(filter)
         return { text = '#ffffff' }
     end,
@@ -210,6 +220,16 @@ require('monokai-pro').setup({
     end
 })
 vim.cmd.colorscheme('monokai-pro-spectrum')
+local disable_italics = function()
+    for _, group in ipairs(vim.fn.getcompletion("", "highlight")) do
+        local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = group, link = false })
+        if ok and hl and hl.italic then
+            hl.italic = false
+            vim.api.nvim_set_hl(0, group, hl)
+        end
+    end
+end
+disable_italics()
 
 -- Code Formatting
 require('conform').setup({
